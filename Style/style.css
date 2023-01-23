@@ -1188,7 +1188,7 @@ video {
   margin-right: auto;
   border-radius: 15px;
   height: auto;
-width: 350px;
+width: 300px;
   box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.706) !important;
 }
 
@@ -1283,17 +1283,28 @@ background-color: var(--color-primary);
   font-style: italic;
 }
 
+
 /* line 859, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
-.left-about-project p .testimonial {
-  margin-left: 25px;
-  margin-right: 15px;
-  height: 55px;
-  width: 55px;
+.testimonial-img {
+  
+  height: 75px;
+  width: 75px;
+  border: 2px solid var(--color-white);
   object-fit: contain;
   border-radius: 50px;
 }
 
-
+.testimonial-text {
+  width: 80%;
+  height: auto;
+  text-indent: 1rem;
+  font-style: italic;
+}
+.quote {
+  color: white;
+  width: 1rem;
+  height: 1rem;
+}
 .icons {
   color: white;
   display: grid;
@@ -1378,8 +1389,7 @@ height: 100%;
 }
 
 .tools {
-  margin: 0;
-  text-align: left;
+  margin-top: 2rem;
 }
 .tools h5 {
 padding-bottom: 1rem;
