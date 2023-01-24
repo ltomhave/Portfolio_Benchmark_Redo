@@ -323,14 +323,87 @@ font-size: 1.3rem;
   line-height: 2rem;
 }
 
+ .icon {
+  color: var(--color-secondary);
+  filter: drop-shadow(5px px 4px #000000);
+}
+.instagram-media-index {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+height: 350px;
+width: 350px;
+object-fit: cover;
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.706) !important;
+  
+}
+
+.instagram-media-index:hover {
+transform: translateY(-5px);
+border: 1px solid var(--color-secondary);
+box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
+padding: .5rem;
+background-color: var(--color-primary);
+}
+.imageclass-index {
+  height: 100%;
+  width: 100%;
+}
+.about-item .image .imageclass-index a img  {
+  height: 350px !important;
+  width: 350px !important;
+  border-radius: var(--br-sm-2);
+  background-color: var(--color-primary);
+object-fit:contain !important;
+box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.706);
+padding-top: 15% !important;
+border: 1px solid var(--color-white);
+
+}
+
+.project {
+  margin: 5rem 0 5rem 0;
+}
+.two-top-margin {
+  margin-top: 2rem;
+}
+
+.indent-left {
+  margin-left: 2rem;
+}
+
+.indent-right {
+  padding-right: 1rem;
+}
+.experience {
+  font-size: 1.5rem;
+  color: var(--color-grey-2);
+font-weight:300;
+}
+
+.project-group::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 80%;
+  height: 1px;
+  background-color: var(--color-grey-2);
+  transform: translateX(-50%);
+  margin-top:-8rem;
+}
+
+
+  
+
 /*About*/
-/* line 226, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
 .about-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-top: 5rem;
   padding-bottom: 10rem;
 }
+
 
 /* line 231, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
 .about-container .right-about {
@@ -886,6 +959,7 @@ height: 100%;
   /* line 594, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
   .main-title h2 .bg-text {
     font-size: 5.5rem;
+
   }
 }
 
@@ -1114,7 +1188,6 @@ main-title .image img:hover {
 .about-container-project {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
@@ -1188,7 +1261,7 @@ video {
   margin-right: auto;
   border-radius: 15px;
   height: auto;
-width: 300px;
+  width: 350px;
   box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.706) !important;
 }
 
@@ -1206,7 +1279,7 @@ background-color: var(--color-primary);
   margin-right: auto;
   border-radius: 15px;
   height: auto;
-max-width: 1100px;
+  max-width: 100%;
   box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.706) !important;
 }
 
@@ -1316,13 +1389,23 @@ background-color: var(--color-primary);
 text-align: center;
 display: grid;
 grid-template-columns: 1fr;
-padding: 0rem;;
+padding: 0rem;
 }
 
 .iconify {
-  color: white;
-  height: 30px;
-  width: 30px;
+  color: var(--color-white);
+  filter: drop-shadow(5px 5px 4px #000000); 
+  height: 40px;
+  width: 40px;
+  margin: auto;
+
+}
+
+
+.iconify img{
+  color: var(--color-white);
+  height: 40px;
+  width: 40px;
   margin: auto;
 
 }
@@ -1398,6 +1481,12 @@ font-size: 1.3rem;
   width: 100%;
 }
 
+.float-left {
+fl
+
+}
+/* ------------------------- animations ------------------------- */
+
 .visual-rep {
   margin: auto;
   width: 90%;
@@ -1439,13 +1528,6 @@ iframe {
 
 }
 
-/* NOT USED */
-.process .rowone {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 2rem;
-  padding-top: 3rem;
-}
 
 /* 1 image 1 row */
 .process .photorow1 {
@@ -1461,8 +1543,23 @@ iframe {
   border-radius: var(--br-sm-2);
 }
 
+.process .photorow1 .timeline-item .imageclass .links {
+  text-align: center;
+}
 
+.imageclass-fifty {
+  width: 25%;
+  height: 25%;
+margin:auto;
 
+}
+
+.imageclass-fifty img {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--br-sm-2);
+
+}
 /* 3 images in 2 columns */
 .process .photorow {
   display: grid;
@@ -1470,8 +1567,6 @@ iframe {
   grid-gap: 2rem;
   padding-bottom: 3rem;
 }
-
-
 
 
 .process .photorow .sidebyside1 {
@@ -1560,16 +1655,18 @@ font-size: 1.25rem;
 .photorow2 .sidebyside1 .timeline-item .residential p {
 
 padding: 2.5rem;
-margin-bottom: 2.5rem;
+margin-bottom: 5rem;
 margin-top: 5rem;
 box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.787);
 
 }
 
+
+
 .photorow2 .sidebyside1 .timeline-item .Commercial p {
   box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.787);
   padding: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
   margin-top: 5rem;
   }
 
@@ -1656,9 +1753,7 @@ height: 100%;
   text-indent: 1rem;
   margin-bottom: 0;
 }
-.links {
-  text-align: center;
-}
+
 
 .links a {
   text-decoration: none;
@@ -1666,24 +1761,38 @@ height: 100%;
   color:var(--color-white);
   font-size: 1.2rem;
   margin-bottom: 2.5rem;
+  
 }
 
 
 .links a::before {
   content: '';
-  background-color: hsla(176, 69%, 62%, 0.464);
+  background-color: var(--color-secondary);
   position: absolute;
   left: 0;
-  bottom: 3px;
+  bottom: -1px;
   width: 100%;
-  height: 8px;
+  height: 6px;
   z-index: -1;
   transition: all .3s ease-in-out;
-
 }
+
 .links a:hover::before {
   bottom: 0;
   height: 100%;
+
+}
+
+.links a:hover {
+  color: var(--color-primary) !important;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.lineup {  
+  display: inline-block;
+  float: left;
+margin-right: 5rem;
 }
 
 
@@ -1776,18 +1885,6 @@ height: 100%;
 }
 
 
-.tabContent {
-  display: none;
-}
-
-.tabContent--active {
-  display: block;
-}
-
-.contentOfTabs {
-  margin-top: 3rem;
-}
-
 /* ---------------------------------J QUERRY -------------------------------------*/
 
 
@@ -1797,7 +1894,7 @@ height: 100%;
       height: auto;
       width: 100%;
     }
-}
+
 
 
     /* line 1217, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
@@ -1831,8 +1928,6 @@ height: 100%;
     .main-title h1 .bg-text {
       font-size: 5.5rem;
     }
-
-
 
   }
 
@@ -2145,8 +2240,7 @@ width: 25px;    }
   }
 
 
-  @media screen and (max-width: 660px) {
-
+  @media screen and (max-width: 600px) {
 
     /* line 1268, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
     .blogs {
@@ -2158,9 +2252,6 @@ width: 25px;    }
       grid-template-columns: repeat(1, 1fr);
     }
 
-
-  }
-  @media screen and (max-width: 600px) {
     iframe {
 
       height:auto;
