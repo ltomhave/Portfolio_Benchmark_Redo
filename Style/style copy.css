@@ -1,0 +1,2273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+:root {
+  --color-primary: #01345b;
+  --color-secondary: #5de1d9;
+  --color-white: #ffffff;
+  --color-black: #000;
+  --color-grey0: #f8f8f8;
+  --color-grey-1: #dbe1e8;
+  --color-grey-2: #b2becd;
+  --color-grey-3: #6c7983;
+  --color-grey-4: #454e56;
+  --color-grey-5: #2a2e35;
+  --color-grey-6: #12181b;
+  --color-Yellow: #ffcc53;
+  --br-sm-2: 14px;
+  --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+#skipnav a {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0 width 1px;
+  white-space: nowrap;
+}
+
+#skipnav a:focus {
+  clip: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 10px 0;
+  background: #fdf6e7;
+  border: 2px solid #990000;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  font-weight: bold;
+  color: #990000;
+}
+
+
+/* line 30, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.screen-reader-only {
+  display: none;
+}
+
+body {
+  background-color: var(--color-primary);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: var(--color-white);
+  transition: all .4s ease-in-out;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 44, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+/* line 51, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+header {
+  min-height: 100vh;
+  color: var(--color-white);
+  padding: 0 !important;
+}
+
+/* line 58, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+section {
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 3rem 10rem;
+}
+
+/* Page transition */
+
+.container {
+  display: block;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  animation: expand .8s ease forwards;
+  background-color: var(--secondary-color);
+  position: relative;
+  transition: all .8s ease;
+  transform: translateY(-100%) scale(0);
+  transition: all .4s ease-in-out;
+}
+
+.container_outer_img {
+  overflow: hidden;
+}
+
+.container_img {
+  width: 100%;
+  animation: slideIn 1.5s ease-in-out forwards;
+}
+
+.par {
+  height: auto;
+  overflow: hidden;
+}
+
+p {
+  line-height: 28px;
+}
+
+h5 {
+padding-bottom: 1rem;
+font-size: 1.3rem;
+  margin: auto;
+  width: 75%;
+}
+.title {
+  overflow: hidden;
+  height: auto;
+}
+
+
+/* line 75, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.active {
+  display: block;
+  animation: appear 1s ease-in-out;
+  transform: translateY(0) scaleY(1);
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(-100%) scaleY(0);
+  }
+
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+/* line 86, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.controlls {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+
+/* line 96, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.controlls .control {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: var(--color-grey-3);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .7rem 0;
+  box-shadow: var(--box-shadow-1);
+}
+
+/* line 108, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.controlls .control i {
+  font-size: 1.2rem;
+  color: var(--color-grey-1);
+  pointer-events: none;
+}
+
+/* line 114, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.controlls .active-btn {
+  background-color: var(--color-Yellow);
+  width: 65px;
+  height: 65px;
+  transition: all .4s ease-in-out;
+}
+
+/* line 117, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.controlls .active-btn i {
+  color: var(--color-primary);
+}
+
+/* line 122, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.control:hover {
+  background-color: var(--color-grey-4);
+}
+
+/* line 132, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.theme-btn {
+  top: 5%;
+  right: 3%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-grey-4);
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  transition: all .1s ease-in-out;
+}
+
+/* line 146, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.theme-btn:active {
+  transform: translateY(-3px);
+}
+
+/* line 147, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.theme-btn i {
+  font-size: 1.4rem;
+  color: var(--color-grey-2);
+  pointer-events: none;
+}
+
+
+
+/*Header-content*/
+/* line 167, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.header-content {
+  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: 100vh
+}
+
+/* line 171, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.header-content .left-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* line 175, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.header-content .left-header .h-shape {
+  transition: all .4s ease-in-out;
+  width: 65%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+}
+
+/* line 186, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.header-content .left-header .image {
+  border-radius: var(--br-sm-2);
+  height: 90%;
+  width: 68%;
+  margin-left: 4rem;
+  background-color: var(--color-black);
+  transition: all .4s ease-in-out;
+}
+
+/* line 193, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.header-content .left-header .image img {
+  border-radius: var(--br-sm-2);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all .4s ease-in-out;
+  filter: grayscale(100%);
+}
+
+/* line 200, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.header-content .left-header .image img:hover {
+  filter: grayscale(0);
+}
+
+/* line 207, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.header-content .right-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 18rem;
+}
+
+/* line 212, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.header-content .right-header .name {
+  font-size: 3rem;
+}
+
+/* line 214, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.header-content .right-header .name span {
+  color: var(--color-Yellow);
+}
+
+/* line 216, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.header-content .right-header p {
+  margin: 1.5rem 0;
+  line-height: 2rem;
+}
+
+/*About*/
+/* line 226, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 5rem;
+  padding-bottom: 10rem;
+}
+
+/* line 231, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container .right-about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+/* line 235, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container .right-about .about-item {
+  border: 1px solid var(--color-grey-5);
+  border-radius: 5px;
+  transition: all .4s ease-in-out;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* line 240, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container .right-about .about-item:hover {
+  cursor: default;
+  transform: translateY(-5px);
+  border: 1px solid var(--color-secondary);
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
+}
+
+/* line 246, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container .right-about .about-item .abt-text {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 250, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container .right-about .about-item .abt-text .large-text {
+  line-height: 1;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  padding: 1.5rem;
+}
+
+/* line 255, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container .right-about .about-item .abt-text .small-text {
+  padding-left: 3rem;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--color-grey-1);
+  letter-spacing: 2px;
+}
+
+/* line 262, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container .right-about .about-item .abt-text .small-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 2rem;
+  height: 2px;
+  background-color: var(--color-grey-3);
+}
+
+/* line 276, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container .left-about {
+  padding-right: 5rem;
+}
+
+/* line 278, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container .left-about p {
+  line-height: 2rem;
+  padding: 1rem;
+  color: var(--color-grey-1);
+}
+
+/* line 283, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container .left-about h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/* line 290, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.stat-title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  padding: 10rem 0 5rem 0;
+  position: relative;
+}
+
+/* line 296, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.stat-title::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 40%;
+  height: 1px;
+  background-color: var(--color-grey-2);
+  transform: translateX(-50%);
+}
+
+.case-study {
+  text-align: center;
+  padding: 3.5rem 0;
+  position: relative
+}
+
+.case-study::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 40%;
+  height: 1px;
+  background-color: var(--color-grey-2);
+  transform: translateX(-50%);
+}
+
+
+/*Timeline*/
+/* line 309, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5rem;
+  padding-bottom: 10rem;
+
+}
+
+/* line 314, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.timeline .timeline-item {
+  position: relative;
+  padding-left: 3rem;
+  border-left: 1px solid var(--color-white);
+}
+
+/* line 318, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.timeline .timeline-item .tl-icon {
+  position: absolute;
+  left: -27px;
+  top: 0;
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 330, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.timeline .timeline-item .tl-icon i {
+  font-size: 1.3rem;
+}
+
+/* line 332, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.timeline .timeline-item .tl-duration {
+  background-color: black;
+  display: inline-flex;
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 339, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.timeline .timeline-item h3 {
+  padding: 1rem 0;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* line 344, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.timeline .timeline-item h3 span {
+  color: var(--color-grey-2);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+/* line 351, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.timeline .timeline-item p {
+  color: var(--color-grey-2);
+}
+
+/* About me section */
+.about-container-me {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 5rem;
+}
+
+/* line 231, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-me .right-about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+/* line 235, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-me .right-about .about-item .image {
+  border-radius: var(--br-sm-2);
+  border: 1px solid var(--color-grey-5);
+height: 100%;
+  width: auto;
+}
+
+
+/* line 240, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-me .right-about .about-item .image:hover {
+  cursor: default;
+  transform: translateY(-5px);
+  border: 1px solid var(--color-secondary);
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
+}
+
+.about-container-me .right-about .about-item .image img {
+  border-radius: var(--br-sm-2);
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all .4s ease-in-out;
+  object-position: top;
+}
+
+/* line 276, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-me .left-about {
+  padding-right: 5rem;
+}
+
+/* line 278, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-me .left-about p {
+  line-height: 2rem;
+
+  color: var(--color-grey-1);
+}
+
+/* line 283, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-me .left-about h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+
+
+/* line 356, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.port-text {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* line 361, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.down_arrow {
+  text-align: center;
+}
+
+/* line 363, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.down_arrow i {
+  padding: 10px;
+  color: var(--color-Yellow);
+}
+
+/* line 368, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* line 378, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* line 383, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolios .portfolio-item {
+  position: relative;
+  border-radius: 15px;
+}
+
+/* line 386, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolios .portfolio-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* line 392, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolios .portfolio-item .hover-items {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(0);
+  transition: all .4s ease-in-out;
+}
+
+/* line 407, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolios .portfolio-item .hover-items h2 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* line 413, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolios .portfolio-item .hover-items .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 417, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolios .portfolio-item .hover-items .icons .icon {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
+
+/* line 428, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolios .portfolio-item .hover-items .icons .icon i {
+  font-size: 1.5rem;
+  color: var(--color-white);
+  margin: 0 1rem;
+}
+
+/* line 433, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolios .portfolio-item .hover-items .icons .icon:hover {
+  background-color: var(--color-white);
+}
+
+/* line 435, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolios .portfolio-item .hover-items .icons .icon:hover i {
+  color: var(--color-primary);
+}
+
+/* line 443, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.portfolio-item:hover .hover-items {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* line 451, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con {
+  display: flex;
+  padding-top: 3.5rem;
+}
+
+/* line 454, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact {
+  flex: 2;
+}
+
+/* line 456, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact hd4 {
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/* line 461, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact p {
+  margin: 1rem 0;
+  line-height: 2rem;
+}
+
+/* line 471, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact .contact-info .contact-item p {
+  margin: .3rem 0 !important;
+  padding: 0 !important;
+}
+
+/* line 475, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact .contact-info .contact-item .icon {
+  display: grid;
+}
+
+/* line 478, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact .contact-info .contact-item .icon i {
+  font-size: 1.3rem;
+  color: var(--color-secondary);
+}
+
+/* line 484, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact .contact-info .contact-item .icon i:hover {
+  color: var(--color-grey-2);
+}
+
+/* line 491, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact .contact-icon {
+  display: flex;
+  margin-top: 2rem;
+}
+
+/* line 494, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact .contact-icon a {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  cursor: pointer;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 .4rem;
+  transition: all .4s ease-in-out;
+}
+
+/* line 506, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact .contact-icon a:hover {
+  background-color: var(--color-grey-4);
+}
+
+/* line 508, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact .contact-icon a:hover i {
+  color: var(--color-grey-1);
+}
+
+/* line 510, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .left-contact .contact-icon a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+/* line 520, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .right-contact {
+  flex: 3;
+  margin-left: 3rem;
+}
+
+/* line 523, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .right-contact .input-control {
+  margin: 1.5rem 0;
+}
+
+/* line 526, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .right-contact .input-control input,
+.contact-content-con .right-contact .input-control textarea {
+  margin-top: 10px;
+  border-radius: 30px;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  padding: .8rem 1.1rem;
+  outline: none;
+  border: none;
+  background-color: var(--color-grey-2);
+  width: 100%;
+  color: var(--color-black);
+  resize: none;
+}
+
+/* line 543, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .right-contact .i-c-2 {
+  display: flex;
+}
+
+/* line 545, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .right-contact .i-c-2 :last-child {
+  margin-left: 1.5rem;
+}
+
+/* line 551, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .right-contact button {
+  background-color: inherit;
+  color: inherit;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: var(--color-white);
+}
+
+/* line 558, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+
+.c {
+  display: flex;
+  justify-content: flex-start;
+  width: 150px;
+}
+
+.contact-content-con .right-contact .submit-btn {
+  overflow: hidden;
+}
+
+.contact-content-con .right-contact .submit-btn:hover {
+  transition: all .4s ease-out;
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 1432px) {
+
+  /* line 568, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+
+
+  /* line 572, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-content-con {
+    flex-direction: column;
+  }
+
+  /* line 574, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-content-con .right-contact {
+    margin-left: 0;
+    margin-top: 2.5rem;
+  }
+
+  /* line 580, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-content-con .right-contact .i-c-2 {
+    flex-direction: column;
+  }
+
+  /* line 583, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-content-con .right-contact .i-c-2 :last-child {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+
+  /* line 588, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-content-con .right-contact {
+    margin-bottom: 6rem;
+  }
+
+  /* line 594, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .main-title h2 .bg-text {
+    font-size: 5.5rem;
+  }
+}
+
+/*Independed components*/
+/* line 605, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+button {
+  background: none;
+  color: white;
+  border: none;
+  font-style: inherit;
+}
+
+.btn-con {
+  display: flex;
+  align-self: flex-start;
+}
+
+/* line 609, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn {
+  width: fit-content;
+  margin: 20px;
+  border-radius: 30px;
+  color: inherit;
+  font-weight: 600;
+  position: relative;
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* line 619, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn .btn-text {
+  padding: 0 2rem;
+}
+
+/* line 620, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn .btn-icon {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+/* line 628, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all .4s ease-out;
+  z-index: -1;
+}
+
+/* line 637, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn:hover {
+  transition: all .4s ease-out;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* line 640, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transform: translateX(0);
+  transition: all .4s ease-out;
+}
+
+
+.main-btn2 {
+  width: fit-content;
+  border-radius: 30px;
+  color: inherit;
+  font-weight: 600;
+  position: relative;
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* line 619, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn2 .btn-text {
+  padding: 0 2rem;
+}
+
+/* line 620, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn2 .btn-icon {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+/* line 628, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all .4s ease-out;
+  z-index: -1;
+}
+
+/* line 637, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn2:hover {
+  transition: all .4s ease-out;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* line 640, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-btn2:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transform: translateX(0);
+  transition: all .4s ease-out;
+}
+
+
+
+/* line 651, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-title {
+  text-align: center;
+}
+
+/* line 653, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-title h1 {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 700;
+  text-underline-position: below 3px;
+}
+
+/* line 659, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-title h1 span {
+  color: var(--color-Yellow);
+}
+
+/* line 660, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-title h1 .bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--color-Yellow);
+  transition: all .4s ease-in-out;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  font-size: 6.3rem;
+}
+
+.main-title h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 700;
+  text-underline-position: below 3px;
+}
+
+/* line 659, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-title h2 span {
+  color: var(--color-Yellow);
+}
+
+/* line 660, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-title h2 .bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--color-Yellow);
+  transition: all .4s ease-in-out;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  font-size: 6.3rem;
+}
+
+/* line 675, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+main-title .image {
+  border-radius: var(--br-sm-2);
+  height: 90%;
+  width: 68%;
+  margin-left: 4rem;
+  background-color: var(--color-black);
+  transition: all .4s ease-in-out;
+}
+
+/* line 682, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+main-title .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all .4s ease-in-out;
+  filter: grayscale(100%);
+}
+
+/* line 688, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+main-title .image img:hover {
+  filter: grayscale(0);
+}
+
+
+
+
+/* ------------------------- Project Pages TOP------------------------ */
+/* line 698, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-project {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding-top: 3.5rem;
+  padding-bottom: 1rem;
+}
+
+/* line 704, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+
+
+.about-container-project .right-about {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+
+
+/* line 717, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-project .right-about .about-item .image {
+  cursor: pointer;
+  transition: .3s;
+}
+
+.about-container-project .right-about .about-item .image img{
+height: 100%;
+width: auto;
+}
+
+
+/* line 721, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-project .right-about .about-item .image img:hover {
+  cursor: zoom-in;
+  transform: translateY(-5px);
+  border: 1px solid var(--color-secondary);
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
+}
+
+.about-container-project .right-about .about-item .image img:active {
+  cursor: zoom-out;
+  transform: scale(2);
+  
+}
+
+
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.about-container-project .right-about .about-item .image img {
+  border-radius: 15px;
+  height: 800px;
+  width: auto;
+  object-fit: cover;
+  transition: all .4s ease-in-out;
+  object-position: top;
+}
+
+/* line 809, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-project .right-about .about-item .abt-text {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 813, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-project .right-about .about-item .abt-text .large-text {
+  line-height: 3;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+/* line 818, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-project .right-about .about-item .abt-text .small-text {
+  padding-left: 3rem;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--color-grey-1);
+  letter-spacing: 2px;
+}
+
+/* line 825, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.about-container-project .right-about .about-item .abt-text .small-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 2rem;
+  height: 2px;
+  background-color: var(--color-grey-5);
+}
+
+/* line 840, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.left-about-project {
+  padding-right: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* line 843, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.left-about-project p {
+  line-height: 2rem;
+  padding: 1rem;
+  color: var(--color-grey-1);
+}
+
+/* line 848, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.left-about-project p span {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-white);
+  padding: 10px;
+}
+
+/* line 854, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.left-about-project p .span2 {
+  text-transform: none;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* line 859, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.left-about-project p .testimonial {
+  margin-left: 25px;
+  margin-right: 15px;
+  height: 55px;
+  width: 55px;
+  object-fit: contain;
+  border-radius: 50px;
+}
+
+
+.icons {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.icons .icon-group {
+  margin: 1rem;
+text-align: center;
+display: grid;
+grid-template-columns: 1fr;
+padding: 0rem;;
+}
+
+.iconify {
+  color: white;
+  height: 30px;
+  width: 30px;
+  margin: auto;
+
+}
+
+
+/* line 875, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.left-about-project p a {
+  color: var(--color-secondary);
+  text-decoration: underline 1px var(--color-secondary);
+}
+
+/* line 878, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.left-about-project p a:hover {
+  text-decoration: none;
+  color: #ceffff;
+}
+
+/* line 883, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.left-about-project h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/* ------------------------- PROCESSS SECTION------------------------- */
+.process {
+  padding-bottom: 3rem;
+}
+
+.process .main-title h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 2rem;
+  height: 2px;
+  background-color: var(--color-grey-3);
+}
+
+/* NOT USED */
+.process .rowone {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2rem;
+  padding-top: 3rem;
+}
+
+/* 1 image 1 row */
+.process .photorow1 {
+  margin: auto;
+  width: 50%;
+  height: auto;
+  padding-bottom: 3rem;
+}
+
+.process .photorow1 .timeline-item .imageclass img {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--br-sm-2)
+}
+
+/* 3 images in 2 columns */
+.process .photorow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+
+
+
+.process .photorow .sidebyside1 {
+  display: grid;
+  grid-template-columns: 2fr;
+}
+
+.process .photorow .sidebyside2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  object-fit: contain;
+}
+
+.process .photorow .sidebyside2 .timeline-item .imageclass {
+  height: 475px;
+  width: auto;
+}
+
+.process .photorow .sidebyside2 .timeline-item .imageclass img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.process .photorow .sidebyside1 .timeline-item .imageclass img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+
+
+h2 a {
+  color: var(--color-secondary);
+  text-decoration: underline 1px var(--color-secondary);
+}
+
+h2 a:hover {
+  text-decoration: none;
+  color: #ceffff;
+}
+
+/* 2 images in 2 columns 1 row*/
+
+.process .photorow2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  padding-bottom: 3rem;
+  width: 75%;
+  height: auto;
+ margin: auto;
+}
+
+.process .photorow2 .sidebyside1 {
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+.process .photorow2 .sidebyside1 .timeline-item .imageclass img {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--br-sm-2);
+}
+
+
+
+.process .photorow2 span {
+color: var(--color-white);
+font-size: 1.25rem;
+}
+
+
+.photorow2 .sidebyside1 .timeline-item .imageclass p {
+  text-indent: 0px !important;
+
+
+}
+
+/* 4 images in 4 columns 1 row*/
+.process .photorow4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.process .photorow4 .sidebyside1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+
+.process .photorow4 .sidebyside1 .timeline-item .imageclass img {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--br-sm-2);
+}
+
+
+
+/* 4 images in 5 columns 1 row*/
+.process .photorow5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.process .photorow5 .sidebyside1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+
+.process .photorow5 .sidebyside1 .timeline-item .imageclass img {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--br-sm-2);
+}
+
+
+
+
+.process .paragraph .timeline-item h3 {
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.process .paragraph .timeline-item h3 span {
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.process .paragraph .timeline-item p {
+  margin: auto;
+  width: 75%;
+  text-indent: 1rem;
+}
+
+.paragraph p a {
+  color: var(--color-secondary);
+  text-decoration: underline 1px var(--color-secondary);
+}
+
+.process .timeline-item .imageclass img:hover {
+  cursor: zoom-in;
+  transform: translateY(-5px);
+  border: 1px solid var(--color-secondary);
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
+}
+
+.process .timeline-item .imageclass img:active {
+  cursor: zoom-out;
+  transform: scale(2.2);
+  margin:auto;
+}
+
+.process .timeline-item .imageclass img {
+  height: auto;
+  max-height: 1000px;
+  width: auto;
+  border-radius: var(--br-sm-2);
+}
+
+.process .timeline-item h3 {
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* line 928, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.process .timeline-item h3 span {
+  color: var(--color-grey-2);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+/* line 936, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.process .timeline-item p {
+  color: var(--color-grey-2);
+  padding-bottom: 2rem;
+}
+
+/* Single Portfolio Page*/
+
+
+.tab {
+  margin: auto;
+  width: 1000px;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.tablinks {
+  padding: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 10px;
+  background: #5de1d9;
+  color: #01345b;
+  border-radius: var(--br-sm-2);
+}
+
+.activeButton {
+  border: display;
+  font-weight: bold;
+  border-bottom: 2px solid #5de1d9;
+  color: #5de1d9;
+}
+
+.tablinks:active {
+  border: display;
+  font-weight: bold;
+  background: white;
+}
+
+.tablinks:focus {
+  border: display;
+  font-weight: bold;
+  background: white;
+}
+
+.tablinks:hover {
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+
+.tabContent {
+  display: none;
+}
+
+.tabContent--active {
+  display: block;
+}
+
+.contentOfTabs {
+  margin-top: 3rem;
+}
+
+/* ---------------------------------J QUERRY -------------------------------------*/
+
+
+
+
+
+
+  @media screen and (max-width: 1432px) {
+
+
+
+    /* line 1217, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .container {
+      padding: 3rem 5rem;
+    }
+
+    /* line 1221, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .contact-content-con {
+      flex-direction: column;
+    }
+
+    /* line 1223, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .contact-content-con .right-contact {
+      margin-left: 0;
+      margin-top: 2.5rem;
+    }
+
+    /* line 1229, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .contact-content-con .right-contact .i-c-2 {
+      flex-direction: column;
+    }
+
+
+    /* line 1237, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .contact-content-con .right-contact {
+      margin-bottom: 6rem;
+    }
+
+    /* line 1243, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .main-title h1 .bg-text {
+      font-size: 5.5rem;
+    }
+
+
+
+  }
+
+
+
+  @media screen and (max-width: 1250px) {
+
+    /* line 1255, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .portfolios {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* line 1262, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .header-content .right-header {
+      padding-right: 9rem;
+    }
+
+    .process .photorow {
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+    }
+
+    .process .photorow .sidebyside2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .process .photorow .sidebyside2 .timeline-item .imageclass {
+      margin: auto;
+      width: 85%;
+      height: auto;
+    }
+
+    .process .photorow .sidebyside2 .timeline-item .imageclass img {
+      margin: auto;
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+
+
+    .process .photorow .sidebyside1 .timeline-item .imageclass {
+      margin: auto;
+      width: 75%;
+    }
+
+    .process .photorow .sidebyside1 .timeline-item .imageclass img {
+      margin: auto;
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .process .photorow1 .timeline-item {
+      height: auto;
+      width: auto;
+    }
+
+  }
+
+  @media screen and (max-width: 1070px) {
+
+    .tab {
+      width: 750px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* line 1277, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .about-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* line 1279, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .about-container .right-about {
+      padding-top: 2.5rem;
+    }
+
+    /* line 1283, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .about-container-project {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* line 1285, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .about-container-project .right-about {
+      padding-top: 2.5rem;
+    }
+
+    /* line 1292, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .main-title h1 {
+      font-size: 4rem;
+    }
+
+    /* line 1294, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .main-title h1 span {
+      font-size: 4rem;
+    }
+
+    /* line 1297, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .main-title h1 .bg-text {
+      font-size: 4.5rem;
+    }
+
+    .process .photorow {
+      grid-template-columns: 1fr;
+    }
+
+    .process .photorow .sidebyside2 {
+      grid-template-columns: 1fr;
+    }
+
+    .process .photorow .sidebyside2 .timeline-item .imageclass img {
+      height: auto;
+      object-fit: cover;
+    }
+
+    .process .timeline-item .imageclass img {
+      height: auto;
+      max-height: 500px;
+      width: auto;
+    }
+
+    .about-container-me {
+      grid-template-columns: 1fr;
+    }
+
+    .portfolios {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .process .photorow4 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .process .photorow5 {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    
+  }
+
+  @media screen and (max-width: 970px) {
+
+    .icons .icon-group {
+      margin: .75rem;
+    }
+
+    /* line 1305, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .container {
+      padding: 7rem 6rem;
+    }
+
+    /* line 1308, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .about-container .left-about {
+      padding-right: 0rem;
+    }
+
+    /* line 1312, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .about-container-project .left-about-project {
+      padding-right: 0rem;
+    }
+
+    /* line 1315, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .header-content {
+      grid-template-columns: repeat(1, 1fr);
+      padding-bottom: 6rem;
+    }
+
+    /* line 1321, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .left-header .h-shape {
+      display: none;
+    }
+
+    /* line 1324, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .left-header .image {
+      width: 90% !important;
+      margin: 0 auto !important;
+    }
+
+    /* line 1330, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .right-header {
+      grid-row: 1;
+      padding-right: 0rem !important;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    /* line 1335, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .right-header .name {
+      font-size: 2.5rem !important;
+      text-align: center;
+      padding-top: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+
+    .process .paragraph .timeline-item h3 {
+  font-size: 2rem;
+    }
+    
+    .process .paragraph .timeline-item h3 span {
+      font-size: 2rem;
+    }
+
+    .main-btn {
+margin-top: 10px;
+      position: relative;
+      display: flex;
+      overflow: hidden;
+    }
+
+        .tab {
+      margin: auto;
+      width: 300px;
+      grid-template-columns: 1fr;
+      padding-bottom: 0rem;
+ 
+    }
+
+    .icons .icon-group {
+      margin: .5rem;
+      width: auto;
+
+    }
+
+    .icons {
+      grid-template-columns: 1fr 1fr;
+  
+    }
+
+    .iconify {
+height: 25px;
+width: 25px;    }
+
+.icons .icon-group .definition {
+      font-size: 1rem;
+    }
+
+    /* line 1344, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .container {
+      padding: 3rem 3rem;
+    }
+
+    /* line 1347, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .about-stats .progress-bars {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* line 1350, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .about-container .right-about {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* line 1354, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .timeline {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* line 1357, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .process {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* line 1361, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .main-title h1 {
+      font-size: 2.75rem;
+      line-height: 100%;
+    }
+
+    /* line 1363, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .main-title h1 span {
+      font-size: 2.75rem;
+      line-height: 100%;
+    }
+
+    /* line 1366, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .main-title h1 .bg-text {
+      font-size: 3rem;
+    }
+  }
+
+
+  @media screen and (max-width: 660px) {
+
+
+    /* line 1268, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .blogs {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* line 1271, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+    .portfolios {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+
+  @media screen and (max-width: 600px) {
+
+
+  /* line 1056, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  header {
+    padding: 0 !important;
+  }
+
+  /* line 1059, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .theme-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+
+  /* line 1063, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .header-content {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+  }
+
+  /* line 1069, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .left-header .h-shape {
+    display: none;
+  }
+
+  /* line 1073, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .right-header {
+    grid-row: 1;
+    padding-right: 0rem !important;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* line 1078, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .right-header .name {
+    font-size: 2.5rem !important;
+    text-align: center;
+    padding-top: 3rem;
+  }
+
+  /* line 1084, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .header-content .left-header .image {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  /* line 1089, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .controlls  {
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--color-grey-5);
+  }
+
+  /* line 1098, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .controlls .control {
+    margin: 1rem .3rem;
+  }
+
+  /* line 1103, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .about-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* line 1105, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .about-container .right-about {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 2.5rem;
+    padding-bottom: 6rem;
+  }
+
+  /* line 1110, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .about-container .left-about {
+    padding-right: 0;
+  }
+
+  /* line 1112, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .about-container .left-about p {
+    padding-left: 0;
+  }
+
+  /* line 1118, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .about-container-project {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* line 1120, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .about-container-project .right-about {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 2.5rem;
+  }
+
+  /* line 1124, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .about-container-project .left-about-project {
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  /* line 1126, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .about-container-project .left-about-project p {
+    padding-left: 0;
+  }
+
+  /* line 1132, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .timeline {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+  }
+
+  /* line 1137, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .process {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+  }
+
+
+  /* line 1142, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .container {
+    padding: 2rem 2.5rem !important;
+  }
+
+  /* line 1147, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .about-stats .progress-bars {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* line 1152, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .portfolios {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+    margin-top: 1rem;
+  }
+
+  /* line 1158, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .blogs {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+  }
+
+  /* line 1163, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-content-con {
+    padding-top: 1.5rem;
+  }
+
+  /* line 1165, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-content-con .right-contact {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+
+  /* line 1171, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-content-con .right-contact .i-c-2 {
+    flex-direction: column;
+  }
+
+  /* line 1174, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-content-con .right-contact .i-c-2 :last-child {
+    margin-left: 0;
+    margin-top: .5rem;
+  }
+
+  /* line 1179, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-content-con .right-contact {
+    margin-bottom: 1.5rem;
+  }
+
+  /* line 1183, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-item {
+    margin: 1rem 0;
+  }
+
+  /* line 1190, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+  .contact-item span {
+    font-size: 1rem;
+  }
+
+  .case-study {
+    padding: 1.5rem 0;
+    position: relative
+  }
+
+  .about-container-me {
+    grid-template-columns: 1fr;
+    padding-bottom: 1.5rem;
+  }
+
+  .about-container-me .right-about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-container-me .left-about {
+    padding-right: 0;
+  }
+
+  .about-container-me .left-about p {
+    justify-content: center;
+    padding-bottom: 1.5rem;
+  }
+
+  /* 1 image 1 row */
+  .process .photorow1 {
+    height: 50%;
+    width: 100%;
+  }
+
+  .process .photorow1 .timeline-item .imageclass img {
+    height: auto;
+    width: 100%;
+  }
+
+  .process .photorow2 {
+    grid-template-columns: 1fr;
+  }
+
+  .process .photorow2 .sidebyside1 .timeline-item .imageclass img {
+    object-fit: cover;
+  }
+
+  .process .photorow4 {
+    grid-template-columns: 1fr;
+  }
+
+  .process .photorow5 {
+    grid-template-columns: 1fr;
+
+  }
+  p {
+    font-size: 1rem;
+    line-height: 24px;
+  }
+  .left-about-project p {
+    font-size: 1rem;
+    line-height: 24px;
+  }
+  .header-content .right-header p {
+    font-size: 1rem;
+    line-height: 24px;
+  }
+
+  .about-container .left-about p {
+    font-size: 1rem;
+    line-height: 24px;
+  }
+  
+  .about-container-me .left-about p {
+    font-size: 1rem;
+    line-height: 24px;
+  }
+  .contact-content-con {
+    padding-top: 1.5rem;
+  }
+
+  .contact-content-con .left-contact p {
+    font-size: 1rem;
+    line-height: 24px;
+  }
+  /* line 523, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .right-contact .input-control {
+  margin: 1rem 0;
+  padding: 0rem;
+}
+
+/* line 526, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.contact-content-con .right-contact .input-control input,
+.contact-content-con .right-contact .input-control textarea {
+  margin-top: 0rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  padding: .5rem 1.1rem;
+}
+
+
+.process .paragraph .timeline-item p {
+  font-size: 1rem;
+  width: 100%;
+}
+/* line 1200, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-title h1 {
+  font-size: 3rem;
+}
+
+/* line 1202, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-title h1 span {
+  font-size: 3rem;
+}
+
+/* line 1205, /Users/laratomhave/Documents/PORTFOLIO SITE/Style/style.scss */
+.main-title h1 .bg-text {
+  font-size: 2.3rem;
+}
+
+.right-header .name {
+  padding-top: 1rem;
+}
+
+.header-content .right-header .name {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+h3 {
+  font-size: 1.5rem;}
+
+  .main-title h2 {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+
+  }
+
+.about-container .right-about .about-item .abt-text .large-text {
+  font-size: 2rem;
+}
+.about-container-project .right-about .about-item .image img:active {
+  transform: scale(1.35);
+}
+
+.process .timeline-item .imageclass img:active {
+  transform: scale(1.35);
+}
+
+.timeline {
+  padding-bottom: 1.5rem;
+}
+
+.about-container {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.stat-title {
+  padding: 10rem 0;
+}
+
+article {
+  margin-bottom: 1.5rem;
+}
+section {
+  padding: 1.5rem 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-container {
+  padding-bottom: 3rem;
+}
+
+  }
