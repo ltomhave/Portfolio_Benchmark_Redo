@@ -362,6 +362,7 @@ font-weight:300;
 .about-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-gap: 4rem;
 }
 
 
@@ -410,7 +411,7 @@ font-weight:300;
   content: '';
   position: absolute;
   left: 0;
-  top: 15px;
+  top: -1rem;
   width: 2rem;
   height: 2px;
   background-color: var(--color-grey-3);
@@ -458,13 +459,12 @@ font-weight:300;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 4rem;
-
-
 }
 
 .timeline .timeline-item {
   position: relative;
   border-left: 1px solid var(--color-white);
+  padding-left: 2rem;
 }
 
 .timeline .timeline-item .tl-icon {
@@ -1217,8 +1217,7 @@ margin-right: 4rem;
   width: 40px;
 }
 
-.high-level h2 {
-}
+
 /* ------------------------- Sticky Notes------------------------- */
 
 .sticky-container {
